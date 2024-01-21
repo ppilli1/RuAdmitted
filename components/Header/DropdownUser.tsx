@@ -44,7 +44,7 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Sadman Shakib
+            Pratham Pilli
           </span>
           <span className="block text-xs">Full Stack Developer</span>
         </span>
@@ -54,7 +54,7 @@ const DropdownUser = () => {
             className="rounded-full"
             width={112}
             height={112}
-            src={"/images/sadmanshakib.jpg"}
+            src={"/images/logo/ProfilePic.png"}
             alt="User"
           />
         </span>

@@ -59,11 +59,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        //
+        //1C2434
         current: "currentColor",
         transparent: "transparent",
         white: "#FFFFFF",
-        black: "#1C2434",
+        black: "#de1010",
         "black-2": "#010101",
         body: "#64748B",
         bodydark: "#AEB7C0",
@@ -78,7 +78,7 @@ module.exports = {
         "gray-3": "#FAFAFA",
         whiten: "#F1F5F9",
         whiter: "#F5F7FD",
-        boxdark: "#24303F",
+        boxdark: "#de1010", //#24303F
         "boxdark-2": "#1A222C",
         strokedark: "#2E3A47",
         "form-strokedark": "#3d4d60",

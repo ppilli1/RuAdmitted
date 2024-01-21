@@ -50,12 +50,12 @@ const Sidebar = ({}: SidebarProps) => {
             className="h-6 w-6 rounded-md"
             width={400}
             height={400}
-            src={"/images/logo/logo-icon.png"}
+            src={"/images/logo/ProfilePic.png"}
             alt="Logo"
           />
           {isSidebarOpen && (
             <h1 className=" ml-2 text-xl font-semibold text-white">
-              ShakibAdmin
+              Pratham Pilli
             </h1>
           )}
         </Link>
