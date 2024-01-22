@@ -138,6 +138,16 @@ const Sidebar = ({}: SidebarProps) => {
 
               {/* <!-- Menu Item Chart --> */}
 
+              {/* Example Tester Page */}
+              <li>
+                <LinkItem
+                  title="Example Tester"
+                  href="/exampleTester"
+                  icon={<BarChart2 className="h-6 w-6" />}
+                ></LinkItem>
+              </li>
+              {/* Example Tester Page End */}
+
               {/* <!-- Menu Item Ui Elements --> */}
 
               {/* <!-- Dropdown Menu Start --> */}
