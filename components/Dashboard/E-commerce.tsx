@@ -15,11 +15,15 @@ const MapOne = dynamic(() => import("../Maps/MapOne"), {
 const ECommerce: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5">
-        <DataCard name="sales" amount={12699} />
+      {/*<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5">
+        <DataCard name="GPA" amount={3.7} />
         <DataCard name="orders" amount={34600} />
         <DataCard name="customers" amount={400} />
+      </div>*/}
+      <div className = "">
+        My Rutgers Admissions Dashboard
       </div>
+      
       <div className="space-y-5 py-5">
         <AreaChart />
         <SimpleBar />

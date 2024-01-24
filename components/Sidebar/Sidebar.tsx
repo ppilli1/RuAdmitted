@@ -148,6 +148,16 @@ const Sidebar = ({}: SidebarProps) => {
               </li>
               {/* Example Tester Page End */}
 
+              {/* Chatbot and FAQ Page*/}
+              <li>
+                <LinkItem
+                  title="Chatbot FAQ"
+                  href="/chatbotFAQ"
+                  icon={<BarChart2 className="h-6 w-6" />}
+                ></LinkItem>
+              </li>
+              {/* */}
+
               {/* <!-- Menu Item Ui Elements --> */}
 
               {/* <!-- Dropdown Menu Start --> */}
