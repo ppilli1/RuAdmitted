@@ -45,7 +45,7 @@ const SimpleBar = () => (
       data={chartdata}
       index="name"
       categories={["AP Exam Score"]}
-      colors={["cyan"]}
+      colors={["blue"]}
       valueFormatter={valueFormatter}
       yAxisWidth={48}
       minValue={1}  // Set the minimum value for the y-axis

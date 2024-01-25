@@ -1,4 +1,5 @@
 // Import necessary modules from React and Next.js
+"use client";
 import React, { useState } from 'react';
 
 // Create a functional component for the FAQ page
