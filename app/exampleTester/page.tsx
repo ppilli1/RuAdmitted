@@ -1,148 +1,150 @@
 // YourComponent.tsx
-"use client"
+"use client";
 import Link from 'next/link';
+import Chatbot from '@/components/chatBot/chatbot';
 
 const YourComponent: React.FC = () => {
+
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen" style={{ marginTop: '-100px', marginLeft: "-450px" }}>
       <div className="relative">
         {/* Corner buttons */}
         <div className="absolute top-0 left-0">
           <Link
-            href="#"
+            href="/majorScreens/Accounting"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute top-0 left-0">
             Accounting
           </Link>
         </div>
         <div className="absolute top-0 right-0">
           <Link
-            href="#"
+            href="/majorScreens/AerospaceEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute top-0 right-0">
             Aerospace Eng.
           </Link>
         </div>
         <div className="absolute bottom-0 left-0">
           <Link
-            href="#"
+            href="/majorScreens/BAIT/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute bottom-0 left-0">
             BAIT
           </Link>
         </div>
         <div className="absolute bottom-0 right-0">
           <Link
-            href="#"
+            href="/majorScreens/Biochemistry/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute bottom-0 right-0">
             Biochemistry
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Biology/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-21 right-0">
             Biology
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Biomathematics/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-5 right-50">
             Biomathematics
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/BiomedicalEngineering/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-36 right-0">
             Biomedical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Chemistry/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-30 right-10">
             Chemistry
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/CivilEngineering/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-30 left-20">
             Civil Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/CognitiveScience/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-32 right-50">
             Cognitive Science
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/ComputerEngineering/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-10 right-40">
             Computer Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/ComputerScience/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 right-31">
             Computer Science
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/ElectricalEngineering/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 left-40">
             Electrical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Finance/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 left-5">
             Finance
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/History/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-40 left-5">
             History
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Marketing/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-10 left-35">
             Marketing
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Mathematics/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-0 left-44">
             Mathematics
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/MechanicalEngineering/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-25 left-46">
             Mechanical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/Physics/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-15 left-0">
             Physics
           </Link>
         </div>
         <div>
           <Link
-            href="#"
+            href="/majorScreens/SupplyChainManagement/page"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 right-70">
             Supply Chain
           </Link>
@@ -150,6 +152,12 @@ const YourComponent: React.FC = () => {
 
         {/* Repeat the above div block for each additional button, adjusting the class and content accordingly */}
         {/* ... */}
+
+        {/* Chatbot Container */}
+        <div className="absolute top-0 right-0">
+          {/* Place the Chatbot component here */}
+          <Chatbot />
+        </div>
 
       </div>
     </div>

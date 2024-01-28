@@ -1,4 +1,4 @@
-"use client"
+// Chatbot.tsx
 import React, { useState, FC } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {
@@ -21,7 +21,7 @@ interface ChatMessage extends MessageModel {
   content?: string; // Update: Make 'content' optional
 }
 
-const App: FC = () => {
+const Chatbot: FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       message: "Hello, I'm your medical assistant! Ask me anything!",
@@ -51,10 +51,10 @@ const App: FC = () => {
     setMessages(newMessages);
 
     setIsTyping(true);
-    await processMessageToChatGPT(newMessages, newMessage.content);
+    await processMessageToChatGPT(newMessages);
   };
 
-  async function processMessageToChatGPT(chatMessages: ChatMessage[], lol: any) {
+  async function processMessageToChatGPT(chatMessages: ChatMessage[]) {
     let apiMessages = chatMessages.map((messageObject) => {
       return { role: messageObject.role, content: messageObject.content };
     });
@@ -67,7 +67,6 @@ const App: FC = () => {
       ],
     };
 
-    
     var myHeaders = new Headers();
     myHeaders.append("api-key", "8100599adae04020964e7c0025843ae4");
     myHeaders.append("Content-Type", "application/json");
@@ -83,7 +82,7 @@ const App: FC = () => {
             "queryType": "vector",
             "fieldsMapping": {},
             "inScope": true,
-            "roleInformation": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences.",
+            "roleInformation": "You are an AI assistant that helps people find information. Make sure you answer concisely in around 2 sentences and you use the files given to you.",
             "filter": null,
             "strictness": 3,
             "topNDocuments": 5,
@@ -95,11 +94,11 @@ const App: FC = () => {
       "messages": [
         {
           "role": "system",
-          "content": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences."
+          "content": "You are an AI assistant that helps people find information. Make sure you answer concisely in around 2 sentences and you use the files given to you."
         },
         {
           "role": "user",
-          "content": lol
+          "content": apiMessages
         }
       ],
       "deployment": "openairuadmit",
@@ -137,37 +136,37 @@ const App: FC = () => {
   }
 
   return (
-    <div className="App">
-      <div
-        style={{
-          display: 'block',
-          position: 'relative',
-          margin: 'auto',
-          marginBottom: '10%',
-          marginTop: '2%',
-          height: '770px',
-          width: '750px',
-          padding: 0,
-        }}
-      >
-        <MainContainer style={{ borderRadius: 23, borderWidth: 5 }}>
-          <ChatContainer>
-            <MessageList
-              scrollBehavior="smooth"
-              typingIndicator={
-                isTyping ? <TypingIndicator content="Assistant is typing" /> : null
-              }
-            >
-              {messages.map((message, i) => (
-                <Message style={{ fontFamily: 'bold' }} key={i} model={message} />
-              ))}
-            </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />
-          </ChatContainer>
-        </MainContainer>
-      </div>
+    <div
+      style={{
+        display: 'block',
+        position: 'absolute',
+        margin: 'auto',
+        marginBottom: '10%',
+        marginTop: '2%',
+        height: '500px',
+        width: '500px',
+        padding: 0,
+        bottom: "-250px",
+        left: "370px"
+      }}
+    >
+      <MainContainer style={{ borderRadius: 23, borderWidth: 5 }}>
+        <ChatContainer>
+          <MessageList
+            scrollBehavior="smooth"
+            typingIndicator={
+              isTyping ? <TypingIndicator content="Assistant is typing" /> : null
+            }
+          >
+            {messages.map((message, i) => (
+              <Message style={{ fontFamily: 'bold' }} key={i} model={message} />
+            ))}
+          </MessageList>
+          <MessageInput placeholder="Type message here" onSend={handleSend} />
+        </ChatContainer>
+      </MainContainer>
     </div>
   );
 };
 
-export default App;
+export default Chatbot;
