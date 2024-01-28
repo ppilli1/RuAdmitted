@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^1.10.1",
+    "@chatscope/chat-ui-kit-styles": "^1.4.0",
     "@headlessui/tailwindcss": "^0.2.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-collapsible": "^1.0.3",
@@ -25,6 +27,7 @@
     "clsx": "^2.0.0",
     "eslint": "8.46.0",
     "eslint-config-next": "latest",
+    "framer-motion": "^11.0.3",
     "jsvectormap": "^1.5.3",
     "lucide-react": "^0.292.0",
     "next": "latest",

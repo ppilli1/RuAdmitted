@@ -25,19 +25,14 @@ const awardData: AWARD[] = [
 ];
 
 const TableFour = () => {
-  const awardCerts1 = "American Mathematics Olympiad Winner"
-  const awardCerts2 = "FBLA Nationals Finalist"
-  const awardCerts3 = "Salutatorian of my High School"
-  const awardCerts4 = "Amazon Web Services Certification"
-  const awardCerts5 = "Python Certification"
-
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
-        My Awards and Certifications
+       My Awards
       </h4>
 
       <div className="flex flex-col">
+
         {awardData.map((award, key) => (
           <div
             className={`grid grid-cols-3 sm:grid-cols-5 ${
@@ -47,11 +42,11 @@ const TableFour = () => {
             }`}
             key={key}
           >
-            <div className="flex items-center gap-3 p-2.5 xl:p-6 xl:pl-0 whitespace-nowrap">
+            <div className="flex items-center gap-3 p-2.5 xl:p-5">
               <div className="flex-shrink-0">
                 <Image src={award.logo} alt="Brand" width={48} height={48} />
               </div>
-              <p className="flex-grow text-black dark:text-white">
+              <p className="hidden text-black dark:text-white sm:block">
                 {award.award}
               </p>
             </div>

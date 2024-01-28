@@ -21,6 +21,11 @@ import {
   AlertCircle,
   SwissFranc,
   MousePointerClick,
+  GalleryHorizontalEnd,
+  LucideFileQuestion,
+  LucideAreaChart,
+  LucideMessageCircle,
+  LucideLayoutDashboard
 } from "lucide-react";
 import { useSidebar } from "./use-sidebar";
 import { cn } from "@/app/libs/utlis";
@@ -82,7 +87,7 @@ const Sidebar = ({}: SidebarProps) => {
                   icon={<HomeIcon className="  h-6 w-6 hover:text-white" />}
                 >
                   <LinkItem
-                    icon={<ShoppingBag />}
+                    icon={<LucideLayoutDashboard />}
                     title="E-commerce"
                     href="/"
                   />
@@ -143,7 +148,7 @@ const Sidebar = ({}: SidebarProps) => {
                 <LinkItem
                   title="Example Tester"
                   href="/exampleTester"
-                  icon={<BarChart2 className="h-6 w-6" />}
+                  icon={<LucideAreaChart className="h-6 w-6" />}
                 ></LinkItem>
               </li>
               {/* Example Tester Page End */}
@@ -153,10 +158,24 @@ const Sidebar = ({}: SidebarProps) => {
                 <LinkItem
                   title="Chatbot FAQ"
                   href="/chatbotFAQ"
-                  icon={<BarChart2 className="h-6 w-6" />}
+                  icon={<LucideFileQuestion className="h-6 w-6" />}
                 ></LinkItem>
               </li>
               {/* */}
+              <li>
+                <LinkItem
+                  title="Chatbot Tester"
+                  href="/chatbotTester"
+                  icon={<LucideMessageCircle className="h-6 w-6" />}
+                ></LinkItem>
+              </li>
+              <li>
+                <LinkItem
+                  title="Video Carousel"
+                  href="/videoCarousel"
+                  icon={<GalleryHorizontalEnd className="h-6 w-6" />}
+                ></LinkItem>
+              </li>
 
               {/* <!-- Menu Item Ui Elements --> */}
 

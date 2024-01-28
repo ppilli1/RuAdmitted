@@ -1,5 +1,6 @@
+// ECommerce.tsx
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import { AreaChart, SimpleBar } from "@/components/Charts";
 import ChatCard from "../Chat/ChatCard";
 import TableOne from "../Tables/TableOne";
@@ -8,8 +9,19 @@ import DataCard from "../Cards/DataCard";
 import SimpleBar2 from "../Charts/bar/SimpleBar2";
 import SimpleBar3 from "../Charts/bar/SimpleBar3";
 import MapOne from "../Maps/MapOne";
+import TableTwo from "../Tables/TableTwo";
+import TableThree from "../Tables/TableThree";
+import TableFour from "../Tables/TableFour";
+import Link from "next/link";
 
 const ECommerce: React.FC = () => {
+  const [showTextBox, setShowTextBox] = useState(false);
+
+  const handleTextBoxClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setShowTextBox(!showTextBox);
+    e.preventDefault()
+  };
+
   return (
     <>
       <div className="bg-red-500 text font-bold p-4 inline-block">
@@ -34,7 +46,35 @@ const ECommerce: React.FC = () => {
         <div className="col-span-12 xl:col-span-8">
           <TableOne />
         </div>
-        <ChatCard />
+        <div className = "col-span-12 xl:col-span-4">
+          <TableFour/>
+        </div>
+        {/*<ChatCard />*/}
+      </div>
+
+      <div className="col-span-12 xl:col-span-8 relative mt-4">
+        {/* Place the button outside the grid but still under TableOne */}
+        <Link
+          href="#"
+          onClick={handleTextBoxClick}
+          className="absolute top-0 left-95 inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10">
+          Have An Admissions Officer Rate Your Application
+        </Link>
+
+        {showTextBox && (
+          <div
+            className="absolute top-20 left-0 right-0 bg-white p-4 border border-gray-300 rounded-lg px-10 py-10"
+            style={{ maxHeight: "200px", overflowY: "auto" }}
+          >
+            {/* AI Prompt Response Textbox */}
+            {/* You can replace this with the actual content from your AI prompt response */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+          </div>
+        )}
+      </div>
+
+      <div className="mt-10" style={{ minHeight: "20rem" }}>
+        {/* Add some additional space at the bottom */}
       </div>
     </>
   );
