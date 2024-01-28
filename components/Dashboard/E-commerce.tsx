@@ -48,11 +48,11 @@ const ECommerce: React.FC = () => {
       "messages": [
         {
           "role": "system",
-          "content": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences."
+          "content": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences. You need to give the student constructive criticism and tell him with to do better to make his/her application better!"
         },
         {
           "role": "user",
-          "content": "This student "
+          "content": "A senior in Highschool who embodies excellence both in academics and extracurriculars. This individual is a distinguished Math Olympiad, showcasing remarkable mathematical abilities, and has earned prestigious recognition at the Future Business Leaders of America (FBLA) competition, demonstrating strong business acumen.In addition to academic achievements, this student is an integral part of the school's football team, contributing as a key player and embodying qualities of leadership, teamwork, and discipline on the field. Alongside sports, they actively participate in debate clubs, showcasing exceptional critical thinking skills and a passion for public speaking Facing the challenges of standardized testing, Ïhis senior took the SAT twice, achieving a superscore of 1400, reflecting determination and commitment to personal improvement."
         }
       ],
       "deployment": "openairuadmit",

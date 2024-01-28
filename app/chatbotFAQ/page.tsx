@@ -2,7 +2,7 @@
 "use client";
 import React, { useState, FC } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import { response } from "express"
+
 import {
   MainContainer,
   ChatContainer,
@@ -148,10 +148,9 @@ const App: FC = () => {
     }).then(function (response) {
       responseClone = response.clone(); // 2
       return response.json();
-    })
-    .then(function (data) {
-      setHHH(data.result);
-      console.log(data);
+    }).then(function (data) {
+      // setHHH(data.result);
+      console.log(data.result);
     }, function (rejectionReason) { // 3
         console.log('Error parsing JSON from response:', rejectionReason, responseClone); // 4
         responseClone.text() // 5

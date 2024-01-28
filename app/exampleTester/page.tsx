@@ -164,126 +164,126 @@ const YourComponent: React.FC = () => {
         </div>
         <div className="absolute bottom-0 left-0">
           <Link
-            href="/majorScreens/BAIT/page"
+            href="/majorScreens/BAIT"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute bottom-0 left-0">
             BAIT
           </Link>
         </div>
         <div className="absolute bottom-0 right-0">
           <Link
-            href="/majorScreens/Biochemistry/page"
+            href="/majorScreens/Biochemistry"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10 absolute bottom-0 right-0">
             Biochemistry
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Biology/page"
+            href="/majorScreens/Biology"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-21 right-0">
             Biology
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Biomathematics/page"
+            href="/majorScreens/Biomathematics"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-5 right-50">
             Biomathematics
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/BiomedicalEngineering/page"
+            href="/majorScreens/BiomedicalEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-36 right-0">
             Biomedical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Chemistry/page"
+            href="/majorScreens/Chemistry"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-30 right-10">
             Chemistry
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/CivilEngineering/page"
+            href="/majorScreens/CivilEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-30 left-20">
             Civil Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/CognitiveScience/page"
+            href="/majorScreens/CognitiveScience"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-32 right-50">
             Cognitive Science
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/ComputerEngineering/page"
+            href="/majorScreens/ComputerEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-10 right-40">
             Computer Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/ComputerScience/page"
+            href="/majorScreens/ComputerScience"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 right-31">
             Computer Science
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/ElectricalEngineering/page"
+            href="/majorScreens/ElectricalEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 left-40">
             Electrical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Finance/page"
+            href="/majorScreens/Finance"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 left-5">
             Finance
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/History/page"
+            href="/majorScreens/History"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-40 left-5">
             History
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Marketing/page"
+            href="/majorScreens/Marketing"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-10 left-35">
             Marketing
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Mathematics/page"
+            href="/majorScreens/Mathematics"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-0 left-44">
             Mathematics
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/MechanicalEngineering/page"
+            href="/majorScreens/MechanicalEngineering"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-25 left-46">
             Mechanical Eng.
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/Physics/page"
+            href="/majorScreens/Physics"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute bottom-15 left-0">
             Physics
           </Link>
         </div>
         <div>
           <Link
-            href="/majorScreens/SupplyChainManagement/page"
+            href="/majorScreens/SupplyChainManagement"
             className="inline-flex items-center justify-center rounded-full border border-black px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xL;px-10 absolute top-20 right-70">
             Supply Chain
           </Link>
