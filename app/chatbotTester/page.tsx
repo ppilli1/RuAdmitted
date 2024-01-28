@@ -117,7 +117,12 @@ const App: FC = () => {
       redirect: 'follow'
     };
 
-    await fetch('https://hoyatest1ruadmit.openai.azure.com/openai/deployments/openairuadmit/extensions/chat/completions?api-version=2023-07-01-preview', requestOptions)
+    await fetch('https://hoyatest1ruadmit.openai.azure.com/openai/deployments/openairuadmit/extensions/chat/completions?api-version=2023-07-01-preview', {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    })
     .then(response => response.json()) 
     .then((data) => {
         setMessages([
