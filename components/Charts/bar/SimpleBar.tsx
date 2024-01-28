@@ -44,7 +44,7 @@ const SimpleBar = () => {
   const apcsa = 4
 
   return(
-    <Card>
+    <Card className = "border-lg border-red-500 border-2 p-4">
       <Title>AP Exam Scores</Title>
       <Subtitle>
         Here are all the AP Exam Scores I received from the AP courses I have taken throughout my time at High School.

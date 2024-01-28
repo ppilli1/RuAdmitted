@@ -16,15 +16,76 @@ import Link from "next/link";
 
 const ECommerce: React.FC = () => {
   const [showTextBox, setShowTextBox] = useState(false);
-
-  const handleTextBoxClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const [lol, lolSetlol] = useState<string>()
+  const handleTextBoxClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     setShowTextBox(!showTextBox);
     e.preventDefault()
+
+    var myHeaders = new Headers();
+    myHeaders.append("api-key", "8100599adae04020964e7c0025843ae4");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "dataSources": [
+        {
+          "type": "AzureCognitiveSearch",
+          "parameters": {
+            "endpoint": "https://cogsearchruadmit.search.windows.net",
+            "indexName": "appkitruadmitindex",
+            "semanticConfiguration": "default",
+            "queryType": "vector",
+            "fieldsMapping": {},
+            "inScope": true,
+            "roleInformation": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences.",
+            "filter": null,
+            "strictness": 3,
+            "topNDocuments": 5,
+            "key": "vAwq7ZRtGSaJbScSog113iuKbDDKR6m7HRW5ggOjWIAzSeDxx0aD",
+            "embeddingDeploymentName": "embedruadmit"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences."
+        },
+        {
+          "role": "user",
+          "content": "This student "
+        }
+      ],
+      "deployment": "openairuadmit",
+      "temperature": 0,
+      "top_p": 1,
+      "max_tokens": 800,
+      "stop": null,
+      "stream": false
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    await fetch('https://hoyatest1ruadmit.openai.azure.com/openai/deployments/openairuadmit/extensions/chat/completions?api-version=2023-07-01-preview', {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    })
+    .then(response => response.json()) 
+    .then((data) => {
+        lolSetlol(data.choices[0].messages[1].content)
+        
+      });
   };
 
   return (
     <>
-      <div className="bg-red-500 text font-bold p-4 inline-block">
+      <div className="bg-red-500 rounded-lg text font-bold p-4 inline-block">
         My Rutgers Admissions Dashboard
       </div>
 
@@ -68,7 +129,7 @@ const ECommerce: React.FC = () => {
           >
             {/* AI Prompt Response Textbox */}
             {/* You can replace this with the actual content from your AI prompt response */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            {lol}
           </div>
         )}
       </div>

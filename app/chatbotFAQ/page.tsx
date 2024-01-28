@@ -1,8 +1,205 @@
 // Import necessary modules from React and Next.js
 "use client";
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
+import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
+import { response } from "express"
+import {
+  MainContainer,
+  ChatContainer,
+  MessageList,
+  Message,
+  MessageInput,
+  TypingIndicator,
+  MessageModel,
+} from '@chatscope/chat-ui-kit-react';
+const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
-// Create a functional component for the FAQ page
+const API_KEY = "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";
+
+interface ChatMessage extends MessageModel {
+  message: string;
+  sentTime: string;
+  sender: string;
+  role?: string; // Update: Make 'role' optional
+  content?: string; // Update: Make 'content' optional
+}
+
+const App: FC = () => {
+  const [hh, setHH] = useState<string>();
+  const [hhh, setHHH] = useState<string>();
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      message: "Hey there! I am your virtual Rutgers admissions bot, here for all your needs. What brings you here today?",
+      sentTime: "just now",
+      sender: "ChatGPT",
+      direction: 'incoming',
+      position: 'single',
+      role: 'system', // Update: Set 'role' explicitly
+      content: 'Introduction', // Update: Set 'content' explicitly
+    },
+  ]);
+
+  const [isTyping, setIsTyping] = useState(false);
+
+  const handleSend = async (message: string) => {
+    const newMessage: ChatMessage = {
+      message,
+      sentTime: 'outgoing',
+      sender: 'user',
+      direction: 'outgoing',
+      position: 'single',
+      role: 'user', // Update: Set 'role' explicitly
+      content: message, // Update: Set 'content' explicitly
+    };
+
+    const newMessages = [...messages, newMessage];
+    setMessages(newMessages);
+
+    setIsTyping(true);
+    await processMessageToChatGPT(newMessages, newMessage.content);
+  };
+
+  async function processMessageToChatGPT(chatMessages: ChatMessage[], lol: any) {
+
+
+    const subscriptionKey = "5197a1cd8be84db6a3b28779e64a0327";
+    const serviceRegion = "eastus";
+    const speech_config = sdk.SpeechConfig.fromSubscription(subscriptionKey, serviceRegion);
+    const audio_config = sdk.AudioConfig.fromDefaultSpeakerOutput();
+    const s_synth = new sdk.SpeechSynthesizer(speech_config, audio_config);
+
+
+    let apiMessages = chatMessages.map((messageObject) => {
+      return { role: messageObject.role, content: messageObject.content };
+    });
+
+    const apiRequestBody = {
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'Introduction' },
+        ...apiMessages,
+      ],
+    };
+
+    var myHeaders = new Headers();
+    myHeaders.append("api-key", "8100599adae04020964e7c0025843ae4");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "dataSources": [
+        {
+          "type": "AzureCognitiveSearch",
+          "parameters": {
+            "endpoint": "https://cogsearchruadmit.search.windows.net",
+            "indexName": "appkitruadmitindex",
+            "semanticConfiguration": "default",
+            "queryType": "vector",
+            "fieldsMapping": {},
+            "inScope": true,
+            "roleInformation": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences.",
+            "filter": null,
+            "strictness": 3,
+            "topNDocuments": 5,
+            "key": "vAwq7ZRtGSaJbScSog113iuKbDDKR6m7HRW5ggOjWIAzSeDxx0aD",
+            "embeddingDeploymentName": "embedruadmit"
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an AI assistant that helps people find information from the files provided to you and you will give a short answer around 2 sentences."
+        },
+        {
+          "role": "user",
+          "content": lol
+        }
+      ],
+      "deployment": "openairuadmit",
+      "temperature": 0,
+      "top_p": 1,
+      "max_tokens": 800,
+      "stop": null,
+      "stream": false
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+
+    const prom = lol + "MAKE SURE YOU CHECK THE ANSWER TO THIS QUESTION IS FROM 2023 to 2024 AND RELEVANT TO RUTGERS! MOST IMPORTANTLY, MAKE SURE YOU START YOU RESPONSE WITH 'As of the 2023-2024 academic year'"
+    var raw2 ={
+      "req": prom,
+    }
+    var responseClone: Response;
+    fetch('http://127.0.0.1:3000/predict', {
+      method: "POST",
+      // mode: 'no-cors',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(raw2),
+      credentials: "include",
+
+    }).then(function (response) {
+      responseClone = response.clone(); // 2
+      return response.json();
+    })
+    .then(function (data) {
+      setHHH(data.result);
+      console.log(data);
+    }, function (rejectionReason) { // 3
+        console.log('Error parsing JSON from response:', rejectionReason, responseClone); // 4
+        responseClone.text() // 5
+        .then(function (bodyText: any) {
+            console.log('Received the following instead of valid JSON:', bodyText);
+            setHH(bodyText);
+            const resp = s_synth.speakTextAsync(bodyText.toString());
+            return resp;
+        });
+    });
+
+    
+  }
+
+  return (
+    <div className="App">
+      <div
+        style={{
+          position: 'absolute',
+          height: '600px',
+          width: '500px',
+          padding: 0,
+          justifyContent: "center",
+          alignSelf: 'center'
+        }}
+      >
+        <MainContainer style={{ borderRadius: 23, borderWidth: 5 }}>
+          <ChatContainer>
+            <MessageList
+              scrollBehavior="smooth"
+              typingIndicator={
+                isTyping ? <TypingIndicator content="Assistant is typing" /> : null
+              }
+            >
+              {                messages.map((message, i) => (
+                  <Message style={{ fontFamily: 'bold' }} key={i} model={message} />
+                ))
+              }
+            </MessageList>
+            <MessageInput placeholder="Type message here" onSend={handleSend} />
+          </ChatContainer>
+        </MainContainer>
+      </div>
+    </div>
+  );
+};
+
+// Add more FAQ items as needed
 const FAQPage: React.FC = () => {
   // Define the list of FAQ items with questions and answers
   const faqItems = [
@@ -63,8 +260,10 @@ const FAQPage: React.FC = () => {
 
   return (
     <div className="flex">
-      {/* Left half (empty) */}
-      <div className="w-1/2"></div>
+      {/* Left half (Chatbot) */}
+      <div className="w-1/2">
+        <App />
+      </div>
 
       {/* Right half (FAQ section) */}
       <div className="w-1/2 p-8">
@@ -78,3 +277,4 @@ const FAQPage: React.FC = () => {
 };
 
 export default FAQPage;
+

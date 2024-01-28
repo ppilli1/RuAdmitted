@@ -19,7 +19,7 @@ const SimpleBar2 = () => {
   const avgSat = 1450
 
   return(
-    <Card>
+    <Card className = "border-lg border-red-500 border-2 p-4">
       <Title>SAT Scores</Title>
       <Subtitle>
         Here is a comparison of my SAT score to the average SAT score at my high school.

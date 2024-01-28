@@ -42,8 +42,8 @@ const TableOne = () => {
   const tennis = "I was elected the Captain of the Men's Varsity Tennis Team during my senior year at high school (2024-2025 academic/school year)."
 
   return (
-    <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-      <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
+    <div className="rounded-xl border border-red-500 border-2 bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      <h4 className="mb-8.5 text-xl font-semibold text-black dark:text-white">
         My Extracurricular Activities
       </h4>
 

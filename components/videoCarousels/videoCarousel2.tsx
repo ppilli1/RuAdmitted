@@ -47,7 +47,7 @@ const CampusFoodInfo = ({ style }: { style?: React.CSSProperties }) => {
       transition={{ duration: 1.5 }}
     >
       <div className="relative w-[500px] flex absolute left-80 bottom-65">
-        <div className="w-[500px]" ref={containerRef}>
+        <div className="w-[500px] border-red-500 border-4 p-4" ref={containerRef}>
           {campusFoodInfo.map((campus, index) => (
             <div
               key={index}

@@ -19,7 +19,7 @@ const SimpleBar3 = () => {
   const avgAct = 30
 
   return(
-    <Card>
+    <Card className = "border-lg border-red-500 border-2 p-4">
       <Title>ACT Scores</Title>
       <Subtitle>
         Here is a comparison of my ACT score to the average ACT score at my high school.

@@ -32,7 +32,7 @@ const Area = () => {
   const otherGpa = 2.8875
 
   return (
-    <Card>
+    <Card className = "border-xl border-red-500 border-2 p-4">
       <Title>My GPA vs The Average GPA At My High School</Title>
       {/* Line under the title */}
       <div className="border-t border-gray-300 mt-2 py-2 text-sm text-gray-500 flex items-center">
