@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const CampusInfo = () => {
+const CampusInfo = ({ style }: { style?: React.CSSProperties }) => {
   const campusInfo = [
     {
       image: '/images/campuses/campus1.jpg',
@@ -41,11 +41,12 @@ const CampusInfo = () => {
   return (
     <motion.div
       className="relative w-[500px] mx-auto mt-10"
+      style = {style}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="relative w-[500px] flex absolute right-50">
+      <div className="relative w-[500px] flex absolute right-80 bottom-65">
         <div className="w-[500px]" ref={containerRef}>
           {campusInfo.map((campus, index) => (
             <div
@@ -53,7 +54,7 @@ const CampusInfo = () => {
               className={`w-full ${index === activeSlide ? '' : 'hidden'}`}
             >
               <a href={campus.link} target="_blank" rel="noopener noreferrer">
-                <Image src={campus.image} alt={campus.title} width={500} height={300} />
+                <Image src={campus.image} alt={campus.title} width={500} height={300}/>
               </a>
               <div className="absolute bottom-0 left-0 w-[500px] bg-black bg-opacity-40 p-4">
                 <p className="text-white">{campus.title}</p>
@@ -63,14 +64,13 @@ const CampusInfo = () => {
         </div>
       </div>
 
-      <div className="relative w-[500px] h-16 mx-auto mt-2 flex items-center justify-center absolute right-0">
+      <div className="relative w-[500px] h-16 mx-auto mt-2 flex items-center justify-center absolute right-80 bottom-65">
         <div className="flex space-x-2">
           {campusInfo.map((_, index) => (
             <div
               key={index}
-              className={`w-6 h-6 rounded-full bg-${
-                index === activeSlide ? 'bg-red-500' : 'bg-gray-500'
-              } border border-gray-300 cursor-pointer`}
+              className={`w-6 h-6 rounded-full z-10 ${index === activeSlide ? 'bg-red-500' : ''}`}
+              style={{ backgroundColor: index === activeSlide ? '#ff0000' : '#333A48' }} // Use your custom gray color here
               onClick={() => handleCircleClick(index)}
             />
           ))}
